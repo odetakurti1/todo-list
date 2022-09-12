@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SideBar from "./components/SideBar/SideBar";
+import InsertTask from "./components/InsertTask/InsertTask";
+import TodoList from "./components/TodoList/TodoList";
+import DoneList from "./components/DoneList/DoneList";
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+import taskReducer from "./features/InsertTask";
+const store = configureStore({
+  reducer: {
+    tasks: taskReducer,
+  },
+});
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+    <Provider store={store}>
+      <div className='flex h-auto'>
+        <SideBar />
+        <Routes>
+          <Route path='/' element={<App />} />
+          <Route path='/insert-task' element={<InsertTask />} />
+          <Route path='/to-do' element={<TodoList />} />
+          <Route path='/done' element={<DoneList />} />
+        </Routes>
+      </div>
+    </Provider>
+  </BrowserRouter>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
