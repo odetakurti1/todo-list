@@ -19,9 +19,11 @@ const TodoList = (props) => {
       <div className='flex justify-between items-center'>
         <h1 className='text-4xl font-bold'>{item.title}</h1>
         <div className='flex items-center'>
+          {/* {item.completed === false && ( */}
           <span className='py-2 px-2 bg-[#FFABE8] text-[#9E0038] rounded-lg mr-7'>
             {item.priority}
           </span>
+          {/* )} */}
           {
             <div>
               <img

@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Provider store={store}>
-      <div className='flex h-screen'>
+      <div className='flex h-auto'>
         <SideBar />
         <Routes>
           <Route path='/' element={<App />} />

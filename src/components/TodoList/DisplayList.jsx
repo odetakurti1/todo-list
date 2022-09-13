@@ -23,7 +23,7 @@ const DisplayList = ({ todos, completeTodo, description }) => {
   });
 
   return (
-    <div className='bg-[#262338] w-full m-14 rounded-3xl px-24 py-12 overflow-y-auto'>
+    <div className='bg-[#262338] w-full m-14 rounded-3xl px-24 py-12'>
       {sorted.map((item) => {
         return (
           item.completed === false && (

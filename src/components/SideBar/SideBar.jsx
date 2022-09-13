@@ -24,20 +24,19 @@ const objects = [
 ];
 const SideBar = () => {
   return (
-    <div
-      className='h-auto w-5/12 bg-[#262338] py-12 max-w-[500px]'
-      id='main-class'
-    >
-      {objects.map((elements, index) => (
-        <NavLink key={elements.id} to={elements.link} className='block mx-14'>
-          <div className='flex justify-between items-center py-4'>
-            <div className='flex'>
-              <img src='/assets/circle.svg' alt='circle' className='pr-4' />
-              <h1 className='text-white text-base'>{elements.title}</h1>
+    <div className='relative w-2/4'>
+      <div className='h-full fixed w-[27%] bg-[#262338] py-12' id='main-class'>
+        {objects.map((elements, index) => (
+          <NavLink key={elements.id} to={elements.link} className='block mx-14'>
+            <div className='flex justify-between items-center py-4'>
+              <div className='flex'>
+                <img src='/assets/circle.svg' alt='circle' className='pr-4' />
+                <h1 className='text-white text-base'>{elements.title}</h1>
+              </div>
             </div>
-          </div>
-        </NavLink>
-      ))}
+          </NavLink>
+        ))}
+      </div>
     </div>
   );
 };
