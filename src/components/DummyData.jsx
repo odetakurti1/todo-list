@@ -5,6 +5,7 @@ export const DummyData = [
     description:
       "Here's some example text that may answer an FAQ or give the user some helpful advice. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.",
     priority: "High",
+    completed: false,
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const DummyData = [
     description:
       "Here's some example text that may answer an FAQ or give the user some helpful advice. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.",
     priority: "Medium",
+    completed: true,
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const DummyData = [
     description:
       "Here's some example text that may answer an FAQ or give the user some helpful advice. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.",
     priority: "High",
+    completed: true,
   },
   {
     id: 4,
@@ -26,17 +29,20 @@ export const DummyData = [
     description:
       "Here's some example text that may answer an FAQ or give the user some helpful advice. A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.",
     priority: "Urgent",
+    completed: false,
   },
   {
     id: 5,
     title: "Title 2",
     description: "Title1",
     priority: "Urgent",
+    completed: true,
   },
   {
     id: 6,
     title: "Title 2",
     description: "Title1",
     priority: "Low",
+    completed: true,
   },
 ];

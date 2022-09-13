@@ -1,34 +1,50 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { connect } from "react-redux";
+import { addTask } from "../../features/reducers";
 
-import { addTask } from "../../features/InsertTask";
+const mapStateToProps = (state) => {
+  return {
+    todos: state,
+  };
+};
 
-const InsertTask = ({ taskList }) => {
-  const handleSubmit = () => {
-    dispatch(
-      addTask({
-        id: Math.random(),
-        title,
-        description,
-        priority,
-      })
-    );
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addTodo: (obj) => dispatch(addTask(obj)),
   };
-  const selectHandle = (event) => {
-    console.log(event.target.value);
-    setPriority(event.target.value);
-  };
-  const dispatch = useDispatch();
+};
+const InsertTask = (props) => {
   const [title, setTask] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("");
+
+  const selectHandle = (event) => {
+    setPriority(event.target.value);
+  };
+  const add = () => {
+    if (title === "" && description === "") {
+      alert("Input is Empty");
+    } else {
+      props.addTodo({
+        id: Math.floor(Math.random() * 1000),
+        title: title,
+        description: description,
+        priority: priority,
+        completed: false,
+      });
+      setTask("");
+      setDescription("");
+    }
+  };
+
   return (
     <div className='bg-[#262338] w-full m-14 rounded-3xl px-24 py-12'>
       <h1 className='text-white text-6xl text-center mb-5'>Insert Task</h1>
       <div>
         <label className='block'>
           <input
+            value={title}
             type='text'
             placeholder='Title'
             className='w-full mb-10 p-4 rounded-2xl bg-[#4E4B66] placeholder:text-[#D9DBE9] text-white'
@@ -39,6 +55,7 @@ const InsertTask = ({ taskList }) => {
         </label>
         <label className='block'>
           <textarea
+            value={description}
             placeholder='Share a Reply'
             name='textarea'
             id='textarea'
@@ -69,7 +86,7 @@ const InsertTask = ({ taskList }) => {
             </select>
           </label>
           <button
-            onClick={handleSubmit}
+            onClick={() => add()}
             type='submit'
             className='py-4 rounded-2xl bg-[#A996FF] text-[#4700AB] font-semibold w-3/4'
           >
@@ -80,5 +97,4 @@ const InsertTask = ({ taskList }) => {
     </div>
   );
 };
-
-export default InsertTask;
+export default connect(mapStateToProps, mapDispatchToProps)(InsertTask);

@@ -6,25 +6,28 @@ const objects = [
   {
     id: 1,
     title: "Insert Task",
-    src: "/asstes/Forward.svg",
+    src: "asstes/Forward.svg",
     link: "/insert-task",
   },
   {
     id: 2,
     title: "To Do",
-    src: "/asstes/Forward.svg",
+    src: "asstes/Forward.svg",
     link: "/to-do",
   },
   {
     id: 3,
     title: "Done",
-    src: "/asstes/Forward.svg",
+    src: "asstes/Forward.svg",
     link: "/done",
   },
 ];
 const SideBar = () => {
   return (
-    <div className='h-auto w-5/12 bg-[#262338] py-12' id='main-class'>
+    <div
+      className='h-auto w-5/12 bg-[#262338] py-12 max-w-[500px]'
+      id='main-class'
+    >
       {objects.map((elements, index) => (
         <NavLink key={elements.id} to={elements.link} className='block mx-14'>
           <div className='flex justify-between items-center py-4'>
