@@ -5,7 +5,7 @@ import { addTask } from "../../features/reducers";
 
 const mapStateToProps = (state) => {
   return {
-    todos: state,
+    tasks: state,
   };
 };
 
@@ -39,8 +39,10 @@ const InsertTask = (props) => {
   };
 
   return (
-    <div className='bg-[#262338] w-full m-14 rounded-3xl px-24 py-12'>
-      <h1 className='text-white text-6xl text-center mb-5'>Insert Task</h1>
+    <div className='bg-[#262338] w-full m-14 rounded-3xl px-24 py-12 sm:w-auto sm:p-14 lg:p-12 lg:m-10'>
+      <h1 className='text-white text-6xl text-center mb-5 sm:text-4xl lg:text-5xl'>
+        Insert Task
+      </h1>
       <div>
         <label className='block'>
           <input
