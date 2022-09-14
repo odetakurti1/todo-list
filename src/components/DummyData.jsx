@@ -38,11 +38,4 @@ export const DummyData = [
     priority: "Urgent",
     completed: true,
   },
-  {
-    id: 6,
-    title: "Title 2",
-    description: "Title1",
-    priority: "Low",
-    completed: true,
-  },
 ];

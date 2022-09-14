@@ -5,7 +5,7 @@ import { DummyData } from "../components/DummyData";
 const initialState = DummyData;
 export const TaskSlice = createSlice({
   name: "tasks",
-  initialState,
+  initialState: initialState,
   reducers: {
     addTask: (state, action) => {
       state.push(action.payload);
@@ -26,4 +26,4 @@ export const TaskSlice = createSlice({
 });
 
 export const { addTask, completeTask } = TaskSlice.actions;
-export const reducer = TaskSlice.reducer;
+export const reducers = TaskSlice.reducer;

@@ -24,8 +24,11 @@ const objects = [
 ];
 const SideBar = () => {
   return (
-    <div className='relative w-2/4'>
-      <div className='h-full fixed w-[27%] bg-[#262338] py-12' id='main-class'>
+    <div className='relative w-2/4 sm:w-full lg:w-full'>
+      <div
+        className='h-full fixed w-[27%] bg-[#262338] py-12 sm:relative sm:w-full lg:w-[40%]'
+        id='main-class'
+      >
         {objects.map((elements, index) => (
           <NavLink key={elements.id} to={elements.link} className='block mx-14'>
             <div className='flex justify-between items-center py-4'>
