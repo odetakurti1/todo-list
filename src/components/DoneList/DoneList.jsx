@@ -24,7 +24,6 @@ const Done = (props) => {
     });
   };
 
-  console.log(tasks);
   return (
     <div className='bg-[#262338] w-full m-14 rounded-3xl px-24 py-12 sm:p-10 sm:w-auto'>
       {Object.values(tasks[0].reducer).map((item, index) => {

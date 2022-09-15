@@ -35,6 +35,7 @@ const InsertTask = (props) => {
       });
       setTask("");
       setDescription("");
+      setPriority({ priority: "" });
     }
   };
 
